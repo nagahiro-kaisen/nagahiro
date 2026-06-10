@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>海鮮料理 ながひろ｜福岡県田川市の海鮮和食店</title>
+<meta name="description" content="福岡県田川市の海鮮料理店。新鮮な魚介、海鮮ランチ、真鯛荒炊き御膳。昼11:30〜14:00、夜17:30〜22:00。駐車場30台以上。">
+<style>
+:root{--gold:#c8a35a;--black:#090909;--ink:#f8f0e4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#090909;color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN","Times New Roman",serif;line-height:1.95;letter-spacing:.04em}
+a{color:inherit;text-decoration:none}
+@keyframes zoom{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes shine{0%{background-position:-200% center}100%{background-position:200% center}}
+header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px 6.5%;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);border-bottom:1px solid rgba(200,163,90,.28)}
+.logo small{display:block;font-size:13px;letter-spacing:.25em}.logo strong{font-size:31px;letter-spacing:.22em;font-weight:500}
+nav{display:flex;gap:24px;font-size:14px;letter-spacing:.18em}nav a{padding-bottom:5px;border-bottom:1px solid transparent}nav a:hover{border-color:var(--gold)}
+.tel{background:linear-gradient(120deg,#6b4b1d,#c8a35a,#6b4b1d);background-size:200% auto;animation:shine 6s linear infinite;padding:10px 22px;border-radius:999px;font-size:20px;white-space:nowrap}
+.hero{position:relative;min-height:92vh;overflow:hidden;display:flex;align-items:center;justify-content:flex-end;padding:120px 8% 80px}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.45),rgba(0,0,0,.58)),url('assets/image_01.webp') center/cover no-repeat;animation:zoom 18s ease-in-out infinite alternate}
+.hero-copy{position:relative;z-index:1;writing-mode:vertical-rl;font-size:43px;letter-spacing:.23em;font-weight:400;text-shadow:0 6px 26px #000}
+.hero-copy small{font-size:16px;margin-right:26px;letter-spacing:.18em}
+.section{padding:78px 8%}.section h2{text-align:center;font-size:38px;letter-spacing:.22em;margin:0 0 34px;font-weight:400;color:#e8c67a}
+.section h2 span{display:block;font-size:13px;letter-spacing:.35em;color:#b89448;margin-top:2px}
+.lead{max-width:850px;margin:0 auto 34px;text-align:center}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.box{padding:26px;border:1px solid rgba(200,163,90,.52);background:rgba(14,14,14,.78);box-shadow:0 12px 34px rgba(0,0,0,.35);transition:.35s ease}
+.box:hover{transform:translateY(-6px)}.box h3{font-size:25px;color:#e8c67a;margin:0 0 10px;font-weight:400;letter-spacing:.16em}.price{font-size:22px;letter-spacing:.08em}.note{font-size:13px;color:#d7c6a5}
+.lunch{position:relative;overflow:hidden;background:#0f0f0f;color:#f8f1e6}.lunch:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.32)),url('assets/image_02.webp') center/cover no-repeat;filter:blur(2px);transform:scale(1.03);opacity:.95}.lunch>*{position:relative;z-index:1}.lunch .box{background:rgba(8,8,8,.72);color:#f8f1e6}.lunch .box h3{color:#f3d08a}
+.dark-bg{position:relative;background:#0f0f0f;overflow:hidden}.dark-bg:before{content:"";position:absolute;inset:0;background:url('assets/image_03.webp') center/cover no-repeat;filter:blur(7px);opacity:.24;transform:scale(1.05)}.dark-bg>*{position:relative;z-index:1}
+.notice{max-width:940px;margin:34px auto 0;border:1px solid rgba(200,163,90,.55);padding:20px 26px;background:rgba(0,0,0,.42);color:#f8f1e6;font-size:15px}
+.slider-wrap{overflow:hidden;background:#080808;border-top:1px solid rgba(200,163,90,.35);border-bottom:1px solid rgba(200,163,90,.35);padding:24px 0}.slider{display:flex;gap:18px;width:max-content;animation:slide 42s linear infinite}.slider img{width:330px;height:220px;object-fit:cover;border:1px solid rgba(200,163,90,.45)}
+.gallery{background:#111}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}figure{margin:0;background:#181818;border:1px solid rgba(200,163,90,.45);overflow:hidden}figure img{width:100%;height:330px;object-fit:cover;display:block;transition:transform 1s ease}figure:hover img{transform:scale(1.06)}figcaption{padding:12px 15px;color:#f8ead0;letter-spacing:.18em}
+.space{display:grid;grid-template-columns:1fr 1fr;gap:24px;background:#151515}.space img{width:100%;height:360px;object-fit:cover;border:1px solid rgba(200,163,90,.35)}
+.reserve{background:linear-gradient(135deg,#6b4b1d,#b98b3d);padding:52px 8%;text-align:center}.reserve h2{font-size:34px;font-weight:400;letter-spacing:.18em;margin:0}.reserve a{display:inline-block;background:#111;padding:14px 34px;margin-top:14px}
+.info{background:#141414;display:grid;grid-template-columns:1fr 1fr;gap:40px}.info .panel{border-top:1px solid rgba(200,163,90,.55);padding-top:24px}
+footer{background:#070707;text-align:center;color:#aaa;padding:18px;font-size:13px}
+@media(max-width:900px){header{padding:10px 5%}nav{display:none}.logo strong{font-size:22px}.tel{font-size:14px;padding:7px 12px}.hero-copy{font-size:30px}.grid4,.gallery-grid,.space,.info{grid-template-columns:1fr}.slider img{width:260px;height:170px}figure img,.space img{height:auto}}
+
+.menu-image-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.menu-image-card{background:rgba(255,255,255,.04);border:1px solid rgba(200,163,90,.45);padding:12px;box-shadow:0 16px 38px rgba(0,0,0,.35)}
+.menu-image-card img{width:100%;height:auto;display:block;border-radius:2px}
+.recommend-box{max-width:920px;margin:34px auto 0;padding:24px 28px;border:1px solid rgba(200,163,90,.55);background:rgba(0,0,0,.42);text-align:center;font-size:17px;line-height:2.1}
+@media(max-width:900px){.menu-image-grid{grid-template-columns:1fr}}
+
+
+/* メニュー表画像の大きさ統一 */
+#drink .menu-image-card,
+#single .menu-image-card{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#drink .menu-image-card img,
+#single .menu-image-card img{
+  width:100%;
+  aspect-ratio:3 / 4;
+  object-fit:contain;
+  background:#fffaf0;
+  padding:6px;
+}
+
+
+/* 完成版：店内・外観写真セクション */
+.store-photo-wrap{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+.store-photo-card{
+  border:1px solid rgba(200,163,90,.55);
+  background:rgba(0,0,0,.42);
+  padding:14px;
+  box-shadow:0 18px 45px rgba(0,0,0,.45);
+}
+.store-photo-card img{
+  width:100%;
+  display:block;
+  border-radius:4px;
+}
+.store-photo-card h3{
+  color:#d6b25e;
+  font-size:24px;
+  margin:18px 0 10px;
+  letter-spacing:.12em;
+}
+.store-photo-card p{
+  line-height:2;
+  color:#eee;
+}
+.final-info-note{
+  margin-top:32px;
+  padding:24px 28px;
+  border:1px solid rgba(200,163,90,.55);
+  background:rgba(0,0,0,.48);
+  line-height:2.1;
+  text-align:center;
+}
+@media(max-width:900px){
+  .store-photo-wrap{grid-template-columns:1fr}
+}
+
+
+/* 最終公開版 微調整 */
+.hero-copy small{
+  line-height: 2.1;
+}
+@media(max-width:900px){
+  .hero-copy{
+    writing-mode: horizontal-tb !important;
+    position: absolute;
+    right: 24px;
+    left: 24px;
+    top: auto;
+    bottom: 56px;
+    text-align: right;
+  }
+  .hero-copy small{
+    display:block;
+    margin-top:12px;
+    line-height:1.9;
+  }
+}
+
+</style>
+<meta name="description" content="福岡県田川市の海鮮料理 ながひろ。筑豊魚市場で仕入れる旬魚を使ったランチ、夜の御膳、コース料理、地酒をお楽しみいただけます。駐車場あり。ご予約は0947-42-3660まで。">
+
+<meta property="og:title" content="海鮮料理 ながひろ">
+<meta property="og:description" content="福岡県田川市の海鮮和食店。旬魚・ランチ・夜の御膳・コース料理・地酒をご用意しております。">
+<meta property="og:type" content="website">
+
+</head>
+<body>
+<header>
+  <div class="logo"><small>海鮮料理</small><strong>ながひろ</strong></div>
+  <nav><a href="#lunch">ランチ</a><a href="#night">夜の御膳</a><a href="#course">コース</a><a href="#single">単品</a><a href="#recommend">本日のおすすめ</a><a href="#drink">お飲み物</a><a href="#gallery">料理写真</a><a href="#store-photos">店内・外観</a><a href="#info">店舗情報</a></nav>
+  <a class="tel" href="tel:0947423660">☎ 0947-42-3660</a>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    四季の海鮮と、<br>和のひととき。<br>
+    <small>玄界灘や近海の旬魚を使った料理と、<br>心を込めたおもてなしで、<br>特別な時間をお届けします。</small>
+  </div>
+</section>
+
+<section class="section lunch" id="lunch">
+  <h2>ランチメニュー<span>LUNCH</span></h2>
+  <p class="lead">新鮮な海の幸を使った、彩り豊かな御膳をランチタイムにご用意しました。<br><strong>ランチタイム 11:30〜14:00</strong></p>
+  <div class="grid4">
+    <div class="box"><h3>海（うみ）</h3><p>人気の定番ランチ。</p><div class="price">2,200円（税込2,420円）</div></div>
+    <div class="box"><h3>雅（みやび）</h3><p>刺身・魚唐揚げ付き。</p><div class="price">3,000円（税込3,300円）</div></div>
+    <div class="box"><h3>匠（たくみ）</h3><p>土瓶蒸し付き。</p><div class="price">4,000円（税込4,400円）</div><p class="note">松茸入りは税込550円追加</p></div>
+    <div class="box"><h3>至高（しこう）</h3><p>特別な日の極みランチ。</p><div class="price">8,000円（税込8,800円）</div></div>
+  </div>
+  <div class="notice">※少人数で対応の為、料理提供時間お時間頂いております。ご予約をお勧めしております。<br>※日々筑豊魚市場での直接仕入れにより内容異なります。<br>※掲載価格は仕入れ状況・時期により変更となる場合がございます。</div>
+</section>
+
+<section class="section dark-bg" id="night">
+  <h2>夜のこだわり御膳<span>NIGHT SET MEAL</span></h2>
+  <p class="lead">夜のお食事にも、旬の魚介を使った御膳をご用意しております。</p>
+  <div class="grid4">
+    <div class="box"><h3>季節御膳</h3><p>四季折々の味覚をお楽しみいただけます。</p><div class="price">3,300円（税込3,630円）</div><p class="note">土日祝：3,800円（税込4,180円）</p></div>
+    <div class="box"><h3>あらだき膳</h3><p>丁寧に炊き上げた魚のあらだき。</p><div class="price">2,800円（税込3,080円）</div><p class="note">土日祝：3,300円（税込3,630円）</p></div>
+    <div class="box"><h3>特選 にぎり御膳</h3><p>旬の魚を使ったにぎり。</p><div class="price">3,000円（税込3,300円）</div><p class="note">土日祝：3,500円（税込3,850円）</p></div>
+    <div class="box"><h3>特選 刺身御膳</h3><p>新鮮な刺身を中心にした御膳。</p><div class="price">2,800円（税込3,080円）</div><p class="note">土日祝：3,300円（税込3,630円）</p></div>
+  </div>
+  <div class="notice">※上記全ての膳は、状況により対応できない場合がございます。<br>※少人数で対応しておりますので、料理に時間がかかる場合がございます。<br>※お時間のない方は、単品料理またはコース料理をお勧めいたします。<br>※ご予約されることをお勧めいたします。<br>※お通し代200円（税込220円）をいただいております。<br>※掲載価格は仕入れ状況・時期により変更となる場合がございます。</div>
+</section>
+
+<section class="section dark-bg" id="course">
+  <h2>推奨コース料理<span>COURSE</span></h2>
+  <p class="lead">宴会料理・祝会席・法事懐石・初顔合わせ・パーティー料理など幅広くご利用いただいております。</p>
+  <div class="grid4">
+    <div class="box"><h3>奏（かなで）</h3><p>お気軽に楽しめる会席コース。</p><div class="price">4,500円（税込4,950円）</div></div>
+    <div class="box"><h3>集（つどい）</h3><p>ご宴会やお集まりに。</p><div class="price">5,500円（税込6,050円）</div></div>
+    <div class="box"><h3>宴（うたげ）</h3><p>旬魚を贅沢に使用した本格会席。</p><div class="price">7,700円（税込8,470円）</div></div>
+    <div class="box"><h3>贅（ぜい）</h3><p>特別な日にふさわしい会席料理。</p><div class="price">10,000円（税込11,000円）</div></div>
+  </div>
+  <div class="notice">※コース内容は当日の仕入れにより異なります。<br>※30名様位まで対応可<br>※ご要望に応じ貸切営業対応可。ご相談ください。<br>※掲載価格は仕入れ状況・時期により変更となる場合がございます。</div>
+</section>
+
+
+<section class="section dark-bg" id="single">
+  <h2>単品メニュー<span>A LA CARTE</span></h2>
+  <p class="lead">刺身・揚げ物・一品料理など、旬の食材を使った単品料理をご用意しております。</p>
+  <div class="menu-image-grid">
+    <div class="menu-image-card"><img src="assets/image_04.webp" alt="海鮮メニュー"></div>
+    <div class="menu-image-card"><img src="assets/image_05.webp" alt="揚げ物メニュー"></div>
+    <div class="menu-image-card"><img src="assets/image_06.webp" alt="一品メニュー"></div>
+  </div>
+  <div class="recommend-box">
+    この他にも、日々の仕入れにより内容が変わるおすすめ料理をご用意しております。<br>旬の魚介や季節料理は、店内またはInstagramにてご案内いたします。<br>※掲載価格は仕入れ状況・時期により変更となる場合がございます。
+  </div>
+</section>
+
+
+
+<section class="section dark-bg" id="recommend">
+  <h2>本日のおすすめ<span>TODAY'S RECOMMENDATION</span></h2>
+  <p class="lead">筑豊魚市場での直接仕入れにより、その日ごとの旬の魚介をご用意しております。</p>
+  <div class="grid4">
+    <div class="box"><h3>旬の刺身</h3><p>天然魚や旬魚を中心に、その日のおすすめを盛り合わせで。</p></div>
+    <div class="box"><h3>煮魚・あら炊き</h3><p>当日の仕入れにより、旬のお魚を丁寧に調理してご提供いたします。</p></div>
+    <div class="box"><h3>焼き物</h3><p>季節の魚を香ばしく焼き上げた一品料理。</p></div>
+    <div class="box"><h3>季節料理</h3><p>白子・牡蠣・ふぐ・貝類など、季節の味覚をご案内いたします。</p></div>
+  </div>
+  <div class="recommend-box">
+    ※おすすめメニューは日々の仕入れにより内容が変わります。<br>
+    詳細は店内、またはInstagramにてご確認ください。<br>
+    ※掲載価格は仕入れ状況・時期により変更となる場合がございます。
+  </div>
+</section>
+
+<section class="section dark-bg" id="drink">
+  <h2>お飲み物<span>DRINK</span></h2>
+  <p class="lead">ビール・焼酎・地酒・ウイスキーなど、お料理に合わせたお飲み物をご用意しております。</p>
+  <div class="menu-image-grid">
+    <div class="menu-image-card"><img src="assets/image_07.webp" alt="お飲み物メニュー"></div>
+    <div class="menu-image-card"><img src="assets/image_08.webp" alt="焼酎メニュー"></div>
+    <div class="menu-image-card"><img src="assets/image_09.webp" alt="地酒・ウイスキーメニュー"></div>
+  </div>
+  <div class="recommend-box">
+    季節ものの日本酒もある時がございますので、お気軽にお声かけください。<br>
+    ※掲載価格は仕入れ状況・時期により変更となる場合がございます。
+  </div>
+</section>
+
+<section class="slider-wrap"><div class="slider"><img src="assets/image_10.webp" alt="揚げ出し"><img src="assets/image_11.webp" alt="旬彩ランチ御膳"><img src="assets/image_12.webp" alt="白子ポン酢"><img src="assets/image_13.webp" alt="小魚天ぷら"><img src="assets/image_14.webp" alt="穴子天ぷら"><img src="assets/image_10.webp" alt="揚げ出し"><img src="assets/image_11.webp" alt="旬彩ランチ御膳"><img src="assets/image_12.webp" alt="白子ポン酢"><img src="assets/image_13.webp" alt="小魚天ぷら"><img src="assets/image_14.webp" alt="穴子天ぷら"><img src="assets/image_15.webp" alt="天ぷら盛り合わせ"></div></section>
+
+<section class="section gallery" id="gallery">
+  <h2>料理写真<span>GALLERY</span></h2>
+  <div class="gallery-grid"><figure><img src="assets/image_10.webp" alt="揚げ出し"><figcaption>揚げ出し</figcaption></figure><figure><img src="assets/image_11.webp" alt="旬彩ランチ御膳"><figcaption>旬彩ランチ御膳</figcaption></figure><figure><img src="assets/image_12.webp" alt="白子ポン酢"><figcaption>白子ポン酢</figcaption></figure><figure><img src="assets/image_13.webp" alt="小魚天ぷら"><figcaption>小魚天ぷら</figcaption></figure><figure><img src="assets/image_14.webp" alt="穴子天ぷら"><figcaption>穴子天ぷら</figcaption></figure><figure><img src="assets/image_15.webp" alt="天ぷら盛り合わせ"><figcaption>天ぷら盛り合わせ</figcaption></figure></div>
+</section>
+
+<section class="section space">
+  <div><h2>お席・空間<span>SPACE</span></h2><p>接待やご家族のお食事など、大切なひとときをゆっくりとお過ごしいただけます。</p><img src="assets/image_16.webp" alt="店内"></div>
+  <div><h2>Instagram<span>@nagahiro.tenshu</span></h2><p>旬の料理や営業情報はInstagramで更新しております。</p><a class="tel" href="https://www.instagram.com/nagahiro.tenshu/" target="_blank">Instagramを見る</a><br><br><img src="assets/image_17.webp" alt="店内"></div>
+</section>
+
+<section class="reserve">
+  <h2>ご予約・お問い合わせ</h2>
+  <p>お席のご予約、コース料理のご相談はお電話にて承ります。</p>
+  <a href="tel:0947423660">0947-42-3660 に電話する</a>
+</section>
+
+
+<section class="section dark-bg" id="store-photos">
+  <h2>店内・外観<span>SPACE</span></h2>
+  <p class="lead">落ち着いた和の空間で、ゆっくりとお食事をお楽しみいただけます。</p>
+  <div class="store-photo-wrap">
+    <div class="store-photo-card">
+      <img src="assets/image_18.webp" alt="海鮮料理ながひろ 店内の様子">
+      <h3>店内の様子</h3>
+      <p>木の温もりを感じる落ち着いた店内で、ご家族でのお食事や接待、法事、ご会食にもご利用いただけます。</p>
+    </div>
+    <div class="store-photo-card">
+      <img src="assets/image_19.webp" alt="海鮮料理ながひろ 外観">
+      <h3>外観・入口</h3>
+      <p>昼夜で異なる表情を見せる外観。駐車場もございますので、お車でも安心してお越しいただけます。</p>
+    </div>
+  </div>
+  <div class="final-info-note">
+    Instagram：<strong>nagahiro.tenshu</strong><br>
+    本日のおすすめや季節料理はInstagramでもご案内しております。
+  </div>
+</section>
+
+<section class="section info" id="info">
+  <div class="panel"><h2>店舗情報<span>ACCESS</span></h2><p>〒825-0004<br>福岡県田川市夏吉453-2 雅の杜</p><p>営業時間：昼 11:30〜14:00／夜 17:30〜22:00<br>定休日：不定休<br>駐車場：30台以上完備</p></div>
+  <div class="panel"><h2>アクセス<span>MAP</span></h2><p>Google Mapで所在地をご確認いただけます。</p><a class="tel" href="https://maps.app.goo.gl/Yb5HtmWcto1Mz1EJA?g_st=ic" target="_blank">Google Mapで見る</a></div>
+</section>
+<footer>© 海鮮料理 ながひろ All Rights Reserved.</footer>
+</body>
+</html>
