@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101010">
+<title>ながひろ｜モバイルオーダー</title>
+<style>
+:root{--gold:#c8a35a;--bg:#101010;--panel:#1b1b1b;--text:#f8f0e4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;letter-spacing:.04em}
+header{padding:22px 16px;text-align:center;border-bottom:1px solid #806b46;background:#080808}header small{display:block;color:var(--gold);letter-spacing:.3em}h1{font-weight:400;margin:4px 0;font-size:27px;letter-spacing:.2em}
+main{max-width:760px;margin:auto;padding:16px}.table{color:var(--gold);text-align:center;padding:12px;border:1px solid #806b46;margin-bottom:16px}
+.notice{font-size:13px;color:#d9c9aa;text-align:center;margin:12px 0 20px}
+nav{display:flex;gap:8px;overflow:auto;padding:4px 0 14px}nav button{white-space:nowrap;border:1px solid #806b46;background:#222;color:var(--text);padding:10px 14px;border-radius:3px}
+nav button.active{background:var(--gold);color:#111}
+.item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 4px;border-bottom:1px solid #38332a}.item h3{margin:0 0 5px;font-size:17px;font-weight:400}.price{color:#e8c67a}.muted{font-size:12px;color:#b9ad98}
+.add{background:var(--gold);border:0;padding:9px 14px;border-radius:3px;font-weight:bold;color:#111}
+.cart{position:sticky;bottom:0;background:#080808;border:1px solid #806b46;padding:14px;margin:18px -2px 0;box-shadow:0 -8px 22px #0008}.cartline{display:flex;justify-content:space-between;font-size:14px;padding:4px 0}
+.submit{width:100%;padding:14px;background:linear-gradient(120deg,#80602b,#d5b56e);border:0;font-size:16px;margin-top:10px;color:#111;font-weight:bold}
+button{cursor:pointer}footer{text-align:center;color:#988b73;font-size:11px;padding:22px}
+</style></head>
+<body>
+<header><small>海鮮料理</small><h1>ながひろ</h1><div style="color:#d9c9aa;font-size:12px">モバイルオーダー（試作）</div></header>
+<main>
+<div class="table" id="tableLabel">お席を確認しています…</div>
+<p class="notice">ご希望の商品を選び、最後に注文内容をご確認ください。<br>※現在は画面試作です。注文は店舗には送信されません。</p>
+<nav id="tabs"></nav><section id="items"></section>
+<div class="cart"><strong>ご注文内容</strong><div id="cart"></div><button class="submit" onclick="review()">注文内容を確認する</button></div>
+</main><footer>© 海鮮料理 ながひろ</footer>
+<script>
+const params=new URLSearchParams(location.search);const table=params.get('table');
+document.getElementById('tableLabel').textContent=table?'テーブル '+table+' 番':'テーブル番号未設定（QRコード準備中）';
+const categories={
+'ランチ':[['海（うみ）','2420'],['雅（みやび）','3300'],['匠（たくみ）','4400'],['至高（しこう）','8800']],
+'夜の御膳':[['季節御膳','3630'],['あらだき膳','3080'],['特選 にぎり御膳','3300'],['特選 刺身御膳','3080']],
+'単品':[],
+'飲み物':[]
+};
+let active='ランチ',cart={};
+function yen(n){return Number(n).toLocaleString('ja-JP')+'円'}
+function drawTabs(){document.getElementById('tabs').innerHTML=Object.keys(categories).map(c=>'<button class="'+(c===active?'active':'')+'" onclick="active=\''+c+'\';draw()">'+c+'</button>').join('')}
+function drawItems(){const list=categories[active];document.getElementById('items').innerHTML=list.length?list.map(([n,p])=>'<div class="item"><div><h3>'+n+'</h3><div class="price">'+yen(p)+'</div></div><button class="add" onclick="add(\''+n+'\','+p+')">追加</button></div>').join(''):'<p class="notice">このカテゴリーの商品は、正式メニュー確認後に登録します。</p>'}
+function add(n,p){cart[n]=(cart[n]||{price:p,qty:0});cart[n].qty++;drawCart()}
+function drawCart(){const el=document.getElementById('cart');const names=Object.keys(cart);el.innerHTML=names.length?names.map(n=>'<div class="cartline"><span>'+n+' × '+cart[n].qty+'</span><span>'+yen(cart[n].price*cart[n].qty)+'</span></div>').join(''):'<p class="muted">商品はまだ選ばれていません。</p>'}
+function draw(){drawTabs();drawItems()}function review(){const names=Object.keys(cart);if(!names.length){alert('商品を選んでください');return}alert('これは画面試作です。まだ店舗には注文送信されません。\n\n'+names.map(n=>n+' × '+cart[n].qty).join('\n')+'\n合計 '+yen(names.reduce((s,n)=>s+cart[n].price*cart[n].qty,0)))}
+draw();drawCart();
+</script></body></html>
