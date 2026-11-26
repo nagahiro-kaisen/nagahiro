@@ -1,0 +1,22 @@
+type,category,name,description,price,holiday_price,image,sort
+item,lunch,海（うみ）,人気の定番ランチ。,2420,,image_11.webp,1
+item,lunch,雅（みやび）,刺身・魚唐揚げ付き。,3300,,image_11.webp,2
+item,lunch,匠（たくみ）,土瓶蒸し付き。松茸入りは税込550円追加。,4400,,image_11.webp,3
+item,lunch,至高（しこう）,特別な日の極みランチ。,8800,,image_11.webp,4
+note,lunch,,ランチタイム 11:30〜14:00。料理内容は仕入れ状況により変わります。ご予約をおすすめしております。,,,,99
+item,night,季節御膳,四季折々の味覚をお楽しみいただけます。,3630,4180,image_11.webp,1
+item,night,あらだき膳,丁寧に炊き上げた魚のあらだき。,3080,3630,image_10.webp,2
+item,night,特選 にぎり御膳,旬の魚を使ったにぎり。,3300,3850,image_11.webp,3
+item,night,特選 刺身御膳,新鮮な刺身を中心にした御膳。,3080,3630,image_11.webp,4
+note,night,,土日祝は右側の価格です。お通し代 税込220円を頂戴しております。状況によりご用意できない場合がございます。,,,,99
+item,course,奏（かなで）,お気軽に楽しめる会席コース。,4950,,image_15.webp,1
+item,course,集（つどい）,ご宴会やお集まりに。,6050,,image_15.webp,2
+item,course,宴（うたげ）,旬魚を贅沢に使用した本格会席。,8470,,image_15.webp,3
+item,course,贅（ぜい）,特別な日にふさわしい会席料理。,11000,,image_15.webp,4
+note,course,,コース内容は当日の仕入れにより異なります。ご予約・ご相談はお電話にて承ります。,,,,99
+sheet,single,海鮮・刺身メニュー,,,,image_04.webp,1
+sheet,single,揚げ物メニュー,,,,image_05.webp,2
+sheet,single,一品料理メニュー,,,,image_06.webp,3
+sheet,drink,お飲み物メニュー,,,,image_07.webp,1
+sheet,drink,焼酎メニュー,,,,image_08.webp,2
+sheet,drink,地酒・ウイスキーメニュー,,,,image_09.webp,3
