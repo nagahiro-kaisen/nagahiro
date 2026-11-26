@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>お品書き｜海鮮料理 ながひろ</title>
+<style>
+:root{--gold:#c8a35a;--cream:#f8f0e4;--muted:#c9bda8}
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:var(--cream);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;line-height:1.7;letter-spacing:.04em}
+header{padding:26px 16px 20px;text-align:center;border-bottom:1px solid #735a30;background:linear-gradient(#17130d,#090909)}
+.brand{font-size:13px;letter-spacing:.3em;color:var(--gold)}
+h1{font-size:27px;font-weight:400;letter-spacing:.2em;margin:4px 0}
+.sub{font-size:11px;color:var(--muted);letter-spacing:.18em}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px;background:#111;border-bottom:1px solid #594523}
+nav a{white-space:nowrap;color:#e8d6b1;text-decoration:none;border:1px solid #806437;border-radius:20px;padding:6px 13px;font-size:12px}
+main{max-width:960px;margin:auto;padding:8px 14px 48px}
+section{padding:30px 0 8px;scroll-margin-top:65px}
+h2{text-align:center;color:#e8c67a;font-size:21px;font-weight:400;letter-spacing:.2em;margin:0 0 7px}
+.en{text-align:center;color:#a88a54;font-size:10px;letter-spacing:.3em;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:#15130f;border:1px solid #6b542e;padding:10px;min-width:0}
+.card img{width:100%;height:145px;object-fit:cover;display:block;background:#211d16}
+.card h3{font-size:17px;font-weight:400;color:#f0d69d;margin:9px 0 2px}
+.desc{font-size:12px;color:#c9bda8;min-height:2.8em;margin:0 0 6px}
+.price{font-size:17px;color:#fff0cf;text-align:right}
+.price small{font-size:11px;color:#bda77e}
+.note{font-size:11px;color:#c9bda8;margin-top:14px;padding:12px;border:1px solid #514126}
+.menu-sheet{border:1px solid #6b542e;background:#17130d;padding:8px;margin:10px 0 18px}
+.menu-sheet img{width:100%;height:auto;display:block}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gallery img{width:100%;display:block;border:1px solid #6b542e}
+footer{text-align:center;padding:26px 12px;color:#bba77f;border-top:1px solid #5c4829;font-size:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.card img{height:160px}.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header><div class="brand">海鮮料理</div><h1>ながひろ お品書き</h1><div class="sub">四季の海鮮と、和のひととき。</div></header>
+<nav><a href="#lunch">ランチ</a><a href="#night">夜の御膳</a><a href="#course">コース</a><a href="#single">単品</a><a href="#drink">お飲み物</a></nav>
+<main>
+<section id="lunch"><h2>ランチメニュー</h2><div class="en">LUNCH</div><div class="grid">
+<article class="card"><img src="assets/image_11.webp" alt="ランチ御膳"><h3>海（うみ）</h3><p class="desc">人気の定番ランチ。</p><div class="price">税込 2,420円</div></article>
+<article class="card"><img src="assets/image_11.webp" alt="ランチ御膳"><h3>雅（みやび）</h3><p class="desc">刺身・魚唐揚げ付き。</p><div class="price">税込 3,300円</div></article>
+<article class="card"><img src="assets/image_11.webp" alt="ランチ御膳"><h3>匠（たくみ）</h3><p class="desc">土瓶蒸し付き。松茸入りは税込550円追加。</p><div class="price">税込 4,400円</div></article>
+<article class="card"><img src="assets/image_11.webp" alt="ランチ御膳"><h3>至高（しこう）</h3><p class="desc">特別な日の極みランチ。</p><div class="price">税込 8,800円</div></article>
+</div><p class="note">ランチタイム 11:30〜14:00。料理内容は仕入れ状況により変わります。ご予約をおすすめしております。</p></section>
+<section id="night"><h2>夜のこだわり御膳</h2><div class="en">NIGHT SET MEAL</div><div class="grid">
+<article class="card"><img src="assets/image_11.webp" alt="御膳料理"><h3>季節御膳</h3><p class="desc">四季折々の味覚をお楽しみいただけます。</p><div class="price">税込 3,630円<br><small>土日祝 税込 4,180円</small></div></article>
+<article class="card"><img src="assets/image_10.webp" alt="魚のあらだき"><h3>あらだき膳</h3><p class="desc">丁寧に炊き上げた魚のあらだき。</p><div class="price">税込 3,080円<br><small>土日祝 税込 3,630円</small></div></article>
+<article class="card"><img src="assets/image_11.webp" alt="にぎり御膳"><h3>特選 にぎり御膳</h3><p class="desc">旬の魚を使ったにぎり。</p><div class="price">税込 3,300円<br><small>土日祝 税込 3,850円</small></div></article>
+<article class="card"><img src="assets/image_11.webp" alt="刺身御膳"><h3>特選 刺身御膳</h3><p class="desc">新鮮な刺身を中心にした御膳。</p><div class="price">税込 3,080円<br><small>土日祝 税込 3,630円</small></div></article>
+</div><p class="note">御膳は仕入れ・状況によりご用意できない場合がございます。お通し代 税込220円を頂戴しております。</p></section>
+<section id="course"><h2>推奨コース料理</h2><div class="en">COURSE</div><div class="grid">
+<article class="card"><img src="assets/image_15.webp" alt="会席料理イメージ"><h3>奏（かなで）</h3><p class="desc">お気軽に楽しめる会席コース。</p><div class="price">税込 4,950円</div></article>
+<article class="card"><img src="assets/image_15.webp" alt="会席料理イメージ"><h3>集（つどい）</h3><p class="desc">ご宴会やお集まりに。</p><div class="price">税込 6,050円</div></article>
+<article class="card"><img src="assets/image_15.webp" alt="会席料理イメージ"><h3>宴（うたげ）</h3><p class="desc">旬魚を贅沢に使用した本格会席。</p><div class="price">税込 8,470円</div></article>
+<article class="card"><img src="assets/image_15.webp" alt="会席料理イメージ"><h3>贅（ぜい）</h3><p class="desc">特別な日にふさわしい会席料理。</p><div class="price">税込 11,000円</div></article>
+</div><p class="note">コース内容は当日の仕入れにより異なります。ご予約・ご相談はお電話にて承ります。</p></section>
+<section id="single"><h2>単品メニュー</h2><div class="en">A LA CARTE</div>
+<div class="menu-sheet"><img src="assets/image_04.webp" alt="海鮮メニュー表"></div><div class="menu-sheet"><img src="assets/image_05.webp" alt="揚げ物メニュー表"></div><div class="menu-sheet"><img src="assets/image_06.webp" alt="一品メニュー表"></div>
+</section>
+<section id="drink"><h2>お飲み物</h2><div class="en">DRINK</div>
+<div class="menu-sheet"><img src="assets/image_07.webp" alt="お飲み物メニュー表"></div><div class="menu-sheet"><img src="assets/image_08.webp" alt="焼酎メニュー表"></div><div class="menu-sheet"><img src="assets/image_09.webp" alt="地酒・ウイスキーメニュー表"></div>
+</section>
+</main>
+<footer>海鮮料理 ながひろ<br>福岡県田川市夏吉453-2 雅の杜<br>営業時間 昼 11:30〜14:00／夜 17:30〜22:00<br><a href="tel:0947423660" style="color:#e8c67a">ご予約 0947-42-3660</a></footer>
+</body>
+</html>
