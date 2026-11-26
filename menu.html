@@ -68,7 +68,12 @@ function parseCSV(text){
  const typeMap={"料理":"item","紙メニュー":"sheet","注意書き":"note"};
  const categoryMap={"ランチ":"lunch","夜の御膳":"night","コース料理":"course","単品料理":"single","お飲み物":"drink"};
  const headers=(rows.shift()||[]).map(h=>headerMap[h.trim().replace(String.fromCharCode(65279),"")]||h.trim());
- return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||"").trim()])).map(([k,v])=>[k,k==="type"?(typeMap[v]||v):k==="category"?(categoryMap[v]||v):v]));
+ return rows.map(r=>{
+  const obj=Object.fromEntries(headers.map((h,i)=>[h,(r[i]||"").trim()]));
+  obj.type=typeMap[obj.type]||obj.type;
+  obj.category=categoryMap[obj.category]||obj.category;
+  return obj;
+ });
 }
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function yen(v){const n=Number(v);return Number.isFinite(n)&&n>0?n.toLocaleString("ja-JP")+"円":"";}
