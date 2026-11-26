@@ -64,9 +64,11 @@ function parseCSV(text){
   else cell+=c;
  }
  if(cell!==""||row.length){row.push(cell);rows.push(row);}
- const headers=rows.shift()||[];
- if(headers[0])headers[0]=headers[0].replace(String.fromCharCode(65279),"");
- return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||"").trim()])));
+ const headerMap={"種類":"type","分類":"category","料理名":"name","説明":"description","通常価格（税込）":"price","土日祝価格（税込）":"holiday_price","写真ファイル":"image","表示順":"sort"};
+ const typeMap={"料理":"item","紙メニュー":"sheet","注意書き":"note"};
+ const categoryMap={"ランチ":"lunch","夜の御膳":"night","コース料理":"course","単品料理":"single","お飲み物":"drink"};
+ const headers=(rows.shift()||[]).map(h=>headerMap[h.trim().replace(String.fromCharCode(65279),"")]||h.trim());
+ return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||"").trim()])).map(([k,v])=>[k,k==="type"?(typeMap[v]||v):k==="category"?(categoryMap[v]||v):v]));
 }
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function yen(v){const n=Number(v);return Number.isFinite(n)&&n>0?n.toLocaleString("ja-JP")+"円":"";}
