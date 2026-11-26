@@ -64,7 +64,7 @@ function parseCSV(text){
   else cell+=c;
  }
  if(cell!==""||row.length){row.push(cell);rows.push(row);}
- const headers=rows.shift()||[];
+ const headers=rows.shift()||[];\n if(headers[0])headers[0]=headers[0].replace(/^\\uFEFF/,"");
  return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||"").trim()])));
 }
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
@@ -104,7 +104,7 @@ function render(rows){
   root.appendChild(block);
  });
 }
-fetch("menu-data.csv?v=1").then(r=>{if(!r.ok)throw new Error("CSV load failed");return r.text();})
+fetch("menu-data.csv", {cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("CSV load failed");return r.text();})
 .then(text=>render(parseCSV(text))).catch(()=>{
  document.getElementById("load-error").hidden=false;
 });
