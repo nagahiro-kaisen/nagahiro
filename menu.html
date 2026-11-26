@@ -64,7 +64,8 @@ function parseCSV(text){
   else cell+=c;
  }
  if(cell!==""||row.length){row.push(cell);rows.push(row);}
- const headers=rows.shift()||[];\n if(headers[0])headers[0]=headers[0].replace(/^\\uFEFF/,"");
+ const headers=rows.shift()||[];
+ if(headers[0])headers[0]=headers[0].replace(String.fromCharCode(65279),"");
  return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||"").trim()])));
 }
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
